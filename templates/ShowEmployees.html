@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% block content %}
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #26a5b6;
+  color: white;
+}
+</style>
+
+<div align="center">
+    <form method="POST">
+        {% csrf_token %}
+        <br><br><br><br>
+        <label for="searchname"> Search Employee </label>
+        <input type="text" name="searchname" id="searchname" placeholder="Enter Employee Name">
+        <input type="submit" value="Search">
+    </form>
+</div>
+
+<div align="center">
+    <form method="POST">
+        {% csrf_token %}
+        <br><br>
+        <label for="searchid"> Search Employee </label>
+        <input type="text" name="searchid" id="searchid" placeholder="Enter Employee id">
+        <input type="submit" value="Search"><br><br><br>
+    </form>
+</div>
+<table id="customers">
+  <tr>
+      <th>Id</th>
+    <th>Name</th>
+    <th>Department</th>
+    <th>Salary</th>
+      <th>Phone No</th>
+      <th>Address</th>
+      <th>Status</th>
+      <th>Action</th>
+  </tr>
+
+    {% for item in list %}
+        <tr>
+        <td>{{ item.EmployeeID }}</td>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.department.Name }}</td>
+            <td>{{ item.salary }}</td>
+            <td>{{ item.Phone }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.status }}</td>
+            <td> <a type="button" class="alert-dark" href="{% url 'GarmentsManagementApp:editEmployee' pk=item.id %}">Edit    [] </a> <a type="button" class="alert-danger" href="{% url 'GarmentsManagementApp:deleteEmployee' pk=item.id %}" onclick="alert('Are you sure?')">Delete</a></td>
+        </tr>
+    {% endfor %}
+
+
+</table>
+{% endblock %}

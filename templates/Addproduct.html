@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div align="center">
+        <br><br><br><br><br><br><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" required="true"><br><br>
+            <label for="PrdId"> Product Id </label>
+            <input type="text" name="PrdId" id="PrdId" required="true"><br><br>
+            <label for="Garment"> Select Grament</label>
+            <select name="Garment" id="Garment" required="true">
+                {% for i in garments %}
+                    <option value="{{ i.id }}">{{ i.name }} : {{ i.type }}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="price"> price</label>
+            <input type="number" name="price" id="price" required="true"><br><br>
+
+            <label for="workingDay"> No of working hours per item</label>
+            <input type="number" name="workingDay" id="workingDay" required="true"><br><br>
+
+            <label for="description"> Description </label>
+            <input type="text" name="description" id="description" required="true"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}

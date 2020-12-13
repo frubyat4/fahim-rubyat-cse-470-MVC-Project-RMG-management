@@ -1,0 +1,150 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 10px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 20px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+</style>
+</head>
+<body>
+<!--<p>Resize the browser window to see the effect.</p>-->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>Production</b></h1>
+        <p>Production process is the most important process in this company. Every worker is trained and
+        know their jobs very well. We have training programs for our workers every 6 months and our production team
+        evaluates the workers performance on weekly basis. We take every measures to make sure our product is made to perfection
+        by the production department.<br><br>
+        Production Manager<br>
+        FBN Industries & ltd</p>
+
+
+    </div>
+    <div class="column-33">
+        <img src="../static/images/pic4.jpg" width="335" height="471">
+    </div>
+  </div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container" style="background-color:#f1f1f1">
+  <div class="row">
+    <div class="column-33">
+      <img src="../static/images/pic2.jpg" alt="App" width="335" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>Quality Checking</b></h1>
+
+      <p>Every single product of ours is checked very thoroughly. If the product quality
+      does not match with our quality level, the product is send back to production process again
+      in order to create the level of quality product that our company requires. We have very capable
+      workers to check every single product that comes out of production and check the product intensively.
+      Same product is checked 3 times by different workers to ensure the quality of the product our production
+      team has made. <br><br>
+      Quality Manager<br>
+      FBN Industries & ltd</p>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>Shipment</b></h1>
+        <p>Our shipment department handles orders very carefully so that the product does
+        not get damaged by any means. Our workers in shipment department has gone through
+        several training process in order to learn about handling product and different scenarios
+        they can face during the shipment process. They are well trained and will make sure that
+        the product gets shipped properly.<br><br>
+        Shipment Manager<br>
+        FBN Industries & ltd</p>
+
+
+
+    </div>
+    <div class="column-33">
+        <img src="../static/images/pic5.jpg" width="335" height="471">
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div align="center">
+        <br><br><br><br><br><br><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" required="true" value="{{ data.Name }}"><br><br>
+            <label for="Garment"> Garment </label>
+            <select name="Garment" id="Garment" required="true">
+                {% for item in list %}
+                    <option value={{ item.id }}> {{ item.name }} </option>
+                {% endfor %}
+            </select><br><br>
+            <label for="price"> Price</label>
+            <input type="number" name="price" id="price" required="true" value="{{ data.price }}"><br><br>
+        <label for="workingDay"> No of working hours per item</label>
+            <input type="number" name="workingDay" id="workingDay" required="true" value="{{ data.workingHoursPerItem }}"><br><br>
+            <label for="stock">Current Stock</label>
+            <input type="number" name="stock" id="stock" required="true" value="{{ data.current_stock }}"><br><br>
+            <label for="description"> Description</label>
+            <input type="text" name="description" id="description" required="true"
+                   value="{{ data.description }}"><br><br>
+            <input type="submit" value="Update">
+        </form>
+    </div>
+{% endblock %}

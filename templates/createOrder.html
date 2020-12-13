@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div align="center">
+    <br><br><br><br><br><br><br><br>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="customer_name">Customer Name </label>
+            <input type="text" name="customer_name" id="customer_name" required="true"><br><br>
+
+            <label for="OrdId"> Order Id </label>
+            <input type="text" name="OrdId" id="OrdId" required="true"><br><br>
+
+            <label for="customer_phn">Customer Phone </label>
+            <input type="text" name="customer_phn" id="customer_phn" required="true"><br><br>
+
+            <select name="product" id="product" required="true">
+                {% for i in list %}
+                <option value="{{ i.id }}">{{ i.Name }} |Garment:- {{ i.garment.name }}|Description:- {{ i.description }}|Price:-{{ i.price }}</option>
+                {% endfor %}
+                </select><br><br>
+
+            <label for="quantity"> Quantity</label>
+            <input type="number" name="quantity" id="quantity" required="true"><br><br>
+            <input type="submit">
+        </form>
+    </div>
+{% endblock %}

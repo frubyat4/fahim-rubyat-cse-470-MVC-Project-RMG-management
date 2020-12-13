@@ -1,0 +1,159 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin: 0;
+  padding: -20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 5px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both
+}
+
+.column-66 {
+  float: left;
+  width: 66.66666%;
+  padding: 10px;
+}
+
+.column-33 {
+  float: left;
+  width: 33.33333%;
+  padding: 20px;
+}
+
+.large-font {
+  font-size: 48px;
+}
+
+.xlarge-font {
+  font-size: 64px
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .column-66,
+  .column-33 {
+    width: 100%;
+    text-align: center;
+  }
+  img {
+    margin: auto;
+  }
+}
+</style>
+</head>
+<body>
+<!--<p>Resize the browser window to see the effect.</p>-->
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>CATS EYE</b></h1>
+        <p>In 1980, CATS EYE began their journey in the form of a small shop in Green Super Market that
+            sold all most everything from candies to ornaments.<br>
+            The founders, Mr. Sayeed Siddiqui Rumi and Mrs. Ashrafun Siddiqui Dora, had kept a small part of that shop
+            for shirts that they designed by themselves. They got a good response from the enthusiastic young men of Dhaka.
+            Therefore, Mrs. Ashrafun Siddiqui decided that they would only sell designer clothes for men.<br>
+            In 1983, the couple rented a floor space in Mansur Bhaban, Elephant Road. That was the official
+            inception of CATS EYE. Until 1993, there was a vacuum in the men’s fashion market for a clothing
+            line for the executives. Thus, CATS EYE introduced a new line of products under the new brand name
+            MONSOON RAIN as a sister concern of Cats Eye.<br><br>
+            FBN Industries have worked with CATS EYE for a long time and has supplied them quality products.</p>
+
+
+    </div>
+    <div class="column-33">
+        <img src="../static/images/b1.jpg" width="335" height="471">
+    </div>
+  </div>
+</div>
+
+<!-- Clarity Section -->
+<div class="container" style="background-color:#f1f1f1">
+  <div class="row">
+    <div class="column-33">
+      <img src="../static/images/b2.png" alt="App" width="335" height="471">
+    </div>
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>Ecstasy</b></h1>
+
+      <p>From its humble beginnings as a single store chain in 1997, Ecstasy has quickly become
+          one of the nations largest fashion retailers. Ecstasy lifestyle store offers quality,
+          exclusive and trendy merchandise to their customers. The store houses Ecstasy’s Top-of the-line brand
+          “Tanjim” for men and “Zarzain” for women along with other international brands.<br><br>
+           FBN Industries has worked with this infamous brand for ages. FBN industry has maintained a professional
+           relationship with Ecstasy for a long time till this day. </p>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="column-66">
+      <h1 class="xmedium-font"><b>GENTLE PARK</b></h1>
+        <p>Gentle Park is a creative and exceptional fashion house in Bangladesh since 19th September 2006.
+            It is born to bring a conspicuous newness in fashion for the young to help them keep pace with
+            the ever-changing fashion wave across the globe. Gentle Park produces all sorts of fashionable
+            men, women & kids as well as essential accessories. It has been leading the fashion trend of the
+            youths in the country for many years.<br>
+            Meanwhile, Gentle Park has become a popular brand icon in fashion with the urban youngsters.
+            We always hold a different outlook on fashion. They always keep in mind that fashion has been a
+            strong passion for new generations. So they continuously try to inspire this passion. they also believe
+            in creating new things in the realm of fashion. They maintain modernism in fashion but don’t forget to
+            value of our fashion tradition. Gentle Park maintains both local and western fashion trends in its
+            products.<br><br>
+            FBN Industries and this renowned fashion brand has worked together for a long time and fulfilled customers
+            demands. Till this day FBN Industries & ltd is in collaboration with Gentle Park.
+            </p>
+
+
+    </div>
+    <div class="column-33">
+        <img src="../static/images/b3.jpg" width="335" height="471">
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
+
+
+{% endblock %}

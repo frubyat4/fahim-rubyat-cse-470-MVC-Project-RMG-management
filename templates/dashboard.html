@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <style>
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: rgba(30, 83, 73, 0.56);
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 28px;
+            padding: 30px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 60px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+    </style>
+
+    <div align="center">
+        <h2>Admin Dashboard</h2>
+        <a class="button" style="vertical-align:middle" href='/ShowGarments/'><span>Show All Garments</span></a>
+        <a class="button" style="vertical-align:middle" href='/addGarment/'><span>Add Garments </span></a>
+        <a class="button" style="vertical-align:middle" href='/ShowProducts/'><span>Product Inventory</span></a>
+        <a class="button" style="vertical-align:middle" href='/createproduct/'><span>Create Product </span></a>
+        <br>
+        <a class="button" style="vertical-align:middle" href='/employees/'><span>All Employees</span></a>
+        <a class="button" style="vertical-align:middle" href='/addEmployee/'><span>Add Employee</span></a>
+
+        <a class="button" style="vertical-align:middle" href='/createorder/'><span>Create Order </span></a>
+        <a class="button" style="vertical-align:middle" href='/showorders/'><span>Show All Orders</span></a>
+
+        <br>
+        <a class="button" style="vertical-align:middle" href='/showdepartments/'><span>All Departments </span></a>
+        <a class="button" style="vertical-align:middle" href='/showSuppliers/'><span>All Suppliers </span></a>
+        <a class="button" style="vertical-align:middle" href='/showShipments/'><span>All Shipments </span></a>
+        <a class="button" style="vertical-align:middle"
+           href='/calculateDate/'><span>Delivery date Calculator </span></a>
+        <br>
+
+        {#    <a class="button" style="vertical-align:middle" href='/showorders/' ><span>Show All Orders</span></a>#}
+        {#    <a class="button" style="vertical-align:middle" href='/showorders/' ><span>Show All Orders</span></a>#}
+        {#    <a class="button" style="vertical-align:middle" href='/showorders/' ><span>Show All Orders</span></a>#}
+        {#    <a class="button" style="vertical-align:middle" href='/showorders/' ><span>Show All Orders</span></a>#}
+        {#    <a class="button" style="vertical-align:middle" href='/showorders/' ><span>Show All Orders</span></a>#}
+    </div>
+{% endblock %}

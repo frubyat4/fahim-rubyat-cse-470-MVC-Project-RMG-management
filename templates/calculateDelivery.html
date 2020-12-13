@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block content %}
+
+    <style>
+    #data {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        font-size: xx-large;
+        }
+    </style>
+    <div align="center">
+        <br><br><br><br><br><br><br><br>
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="product"> Product </label>
+            <select name="product" id="product" required="true">
+                {% for i in products %}
+                <option value="{{ i.id }}">{{ i.Name }} |Garment:- {{ i.garment.name }}|Description:- {{ i.description }}|Price:-{{ i.price }}</option>
+                {% endfor %}
+                </select><br><br>
+            <label for="quant"> Enter Quantity</label>
+            <input type="number" name="quant" id="quant" required="true" ><br><br>
+            <br><br>
+            <input type="submit" value="Calculate">
+        <br><br><br>
+        <label for="data"> Estimated shipment date : </label>
+        <div id="data">
+            {{ delivarydate }}
+        </div>
+        </form>
+    </div>
+
+
+
+
+{% endblock %}

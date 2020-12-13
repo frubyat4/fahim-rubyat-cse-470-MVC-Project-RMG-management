@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div align="center">
+    <br><br><br><br><br><br><br><br>
+        <form method="POST" action="/editEmployee/{{ data.id }}/">
+            {% csrf_token %}
+            <label for="name"> Name </label>
+            <input type="text" name="name" id="name" required="true" value="{{ data.Name }}"><br><br>
+            <label for="department"> department</label>
+            <select name="department" id="department" required="true">
+               {% for item in depts %}
+                   <option value= {{ item.id }} > {{ item.Name }} </option>
+                {% endfor %}
+            </select><br><br>
+            <label for="salary"> Salary</label>
+            <input type="number" name="salary" id="salary" required="true" value="{{ data.salary }}"><br><br>
+
+            <input type="text" name="phone" id="phone" required="true" value="{{ data.Phone }}"><br><br>
+            <label for="address"> Address </label>
+            <input type="text" name="address" id="address" required="true" value="{{ data.address }}"><br><br>
+            <label for="status"> Status </label>
+            <input type="text" name="status" id="status" required="true" value="{{ data.status }}"><br><br>
+
+            <input type="submit" value="Update">
+        </form>
+    </div>
+{% endblock %}

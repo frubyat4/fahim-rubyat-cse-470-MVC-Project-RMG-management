@@ -1,0 +1,64 @@
+{% extends 'index.html' %}
+{% block content %}
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers button {
+            background-color: #50c764
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            background-color: #26a5b6;
+            color: white;
+        }
+    </style>
+    </head>
+    <body>
+
+    <table id="customers">
+        <tr>
+            <th>Product ID</th>
+            <th>OrderId</th>
+            <th>Customer Name</th>
+            <th>Product Name</th>
+            <th>Quantity</th>
+            <th>TotalPrice</th>
+            <th> Estimated Delivery Date</th>
+        </tr>
+
+        {% for item in list %}
+            <tr>
+                <td>{{ item.product.product_id }}</td>
+                <td>{{ item.order.OrderID }}</td>
+                <td>{{ item.order.CustomerName }}</td>
+                <td>{{ item.product.Name }}</td>
+                <td>{{ item.order.quantity }}</td>
+                <td>{{ item.order.TotalPrice }}</td>
+                <td>{{ item.delivaryDate }}</td>
+            </tr>
+        {% endfor %}
+
+
+    </table>
+{% endblock %}
